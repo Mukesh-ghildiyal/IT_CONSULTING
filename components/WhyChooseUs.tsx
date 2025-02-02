@@ -1,7 +1,8 @@
+import Image from "next/image";
 import { getTestimonials } from "../lib/googleSheets";
 
 export default async function WhyChooseUs() {
-  const testimonials = await getTestimonials(); // ✅ Fetch data on the server
+  const testimonials = await getTestimonials();
   console.log(testimonials);
 
   return (
@@ -17,10 +18,12 @@ export default async function WhyChooseUs() {
               className="p-6 bg-gray-900 border border-yellow-500 shadow-lg rounded-xl transform transition-all hover:scale-105 hover:shadow-xl"
             >
               <div className="flex flex-col items-center">
-                <img
+                <Image
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-20 h-20 rounded-full border-4 border-yellow-400 mb-3"
+                  width={80}
+                  height={80}
+                  className="rounded-full border-4 border-yellow-400 mb-3"
                 />
                 <h3 className="text-lg font-semibold text-white">
                   {testimonial.name}
@@ -29,7 +32,7 @@ export default async function WhyChooseUs() {
                   {testimonial.designation}
                 </p>
                 <p className="mt-3 text-yellow-300 text-center italic">
-                  "{testimonial.quote}"
+                  &quot;{testimonial.quote}&quot;
                 </p>
               </div>
             </div>

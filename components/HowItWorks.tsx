@@ -6,7 +6,6 @@ import {
   Code,
   Server,
   Cloud,
-  ArrowRight,
   Shield,
   Cpu,
 } from "lucide-react";
@@ -129,6 +128,7 @@ export default function HowItWorks() {
                 ))}
               </div>
             </div>
+
             <div className="order-1 lg:order-2 space-y-8">
               <div className="inline-flex items-center rounded-full bg-primary-500/10 px-4 py-2 text-primary-500">
                 <Lightbulb className="mr-2 h-5 w-5" />
@@ -197,15 +197,7 @@ export default function HowItWorks() {
           </div>
 
           {/* CTA Section */}
-          <div className="text-center">
-            <a
-              href="/consultation"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary-500 px-8 py-4 text-lg font-bold text-black transition-all hover:bg-primary-400"
-            >
-              Get a Free IT Consultation
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </a>
-          </div>
+          <div className="text-center"></div>
         </div>
       </div>
     </section>
