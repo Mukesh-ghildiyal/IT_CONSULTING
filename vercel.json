@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/*": {
-      "includeFiles": ["lib/key.json"]
+      "includeFiles": "lib/key.json"
     }
   },
   "build": {
