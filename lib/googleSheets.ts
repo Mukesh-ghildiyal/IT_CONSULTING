@@ -1,25 +1,21 @@
 import { google } from "googleapis";
-import path from "path";
-import fs from "fs";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-// ✅ Fix: Correct key.json path
-const KEY_PATH = path.resolve(process.cwd(), "lib", "key.json");
-
-if (!fs.existsSync(KEY_PATH)) {
-  throw new Error(`Missing key.json file at path: ${KEY_PATH}`);
-}
-
-const credentials = JSON.parse(fs.readFileSync(KEY_PATH, "utf8"));
+// const base64EncodedServiceAccount = process.env.GOOGLE_CREDENTIALS;
+const decodedServiceAccount = Buffer.from(process.env.GOOGLE_CREDENTIALS!, 'base64').toString('utf-8');
+const credentials = JSON.parse(decodedServiceAccount);
 
 const auth = new google.auth.GoogleAuth({
-  credentials,
+  credentials: credentials,
   scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
 });
-console.log(process.env.GOOGLE_SHEET_ID!)
-console.log(process.env.GOOGLE_SHEET_RANGE!)
+
+console.log(process.env.GOOGLE_SHEET_ID!);
+console.log(process.env.GOOGLE_SHEET_RANGE!);
+// console.log(process.env.GOOGLE_CREDENTIALS!);
+
 const sheets = google.sheets({ version: "v4", auth });
 
 export async function getTestimonials() {
@@ -43,7 +39,7 @@ export async function getTestimonials() {
       id: index + 1,
       name: row[0] || "Unknown",
       designation: row[1] || "No Designation",
-      quote:row[2] || 'No quote provided',
+      quote: row[2] || "No quote provided",
       image: row[3] || "/default-image.jpg",
     }));
   } catch (error) {
@@ -51,4 +47,3 @@ export async function getTestimonials() {
     return [];
   }
 }
-
