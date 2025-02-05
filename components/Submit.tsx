@@ -8,6 +8,7 @@ export default function GoogleSheetForm() {
     message: "",
   });
   const [response, setResponse] = useState("");
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -28,6 +29,13 @@ export default function GoogleSheetForm() {
       const result = await res.json();
       console.log(result);
       setResponse(result.message);
+
+      // Reset form fields
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
     } catch (error) {
       console.error("Error:", error);
       setResponse("Error submitting data.");
@@ -42,6 +50,7 @@ export default function GoogleSheetForm() {
           type="text"
           name="name"
           placeholder="Name"
+          value={formData.name}
           onChange={handleChange}
           required
           className="p-2 border rounded w-full"
@@ -50,6 +59,7 @@ export default function GoogleSheetForm() {
           type="email"
           name="email"
           placeholder="Email"
+          value={formData.email}
           onChange={handleChange}
           required
           className="p-2 border rounded w-full"
@@ -57,6 +67,7 @@ export default function GoogleSheetForm() {
         <textarea
           name="message"
           placeholder="Message"
+          value={formData.message}
           onChange={handleChange}
           required
           className="p-2 border rounded w-full"
