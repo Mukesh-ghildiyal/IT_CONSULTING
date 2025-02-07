@@ -75,7 +75,7 @@ export default function HeroSection() {
             transition={{ duration: 1 }}
             className="mb-6 inline-flex items-center rounded-full border border-neutral-800 bg-neutral-900/50 px-4 py-2"
           >
-            <span className="mr-2 h-2 w-2 rounded-full bg-primary-500 animate-pulse"></span>
+            <span className="mr-2 h-2 w-2 rounded-full bg-blue-500 animate-pulse"></span>
             <span className="text-sm text-neutral-400">
               Innovative IT Consulting for Business Growth
             </span>
@@ -84,11 +84,11 @@ export default function HeroSection() {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="mb-6 text-5xl font-extrabold tracking-wider text-transparent bg-gradient-to-r from-white via-primary-200 to-primary-500 bg-clip-text md:text-6xl lg:text-7xl"
+            className="mb-6 text-5xl font-extrabold tracking-wider text-transparent bg-gradient-to-r from-white via-blue-200 to-blue-500 bg-clip-text md:text-6xl lg:text-7xl"
           >
-            Empowering Business,
+            "Techsectra:Your
             <br />
-            <span className="text-white">with Cutting-Edge IT Solutions</span>
+            <span className="text-white"> Partner in IT Excellence "</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -96,8 +96,10 @@ export default function HeroSection() {
             transition={{ duration: 1, delay: 0.4 }}
             className="mx-auto mb-10 max-w-2xl text-lg text-neutral-400"
           >
-            We provide top-tier IT consulting services to help your business
-            grow with innovation and technology-driven strategies.
+            At Techsectra, we bridge the gap between business needs and
+            cutting-edge technology. Our concierge service, powered by dedicated
+            tech leads, sets us apart—ensuring seamless integration, continuous
+            support, and optimized performance of your IT resources.
           </motion.p>
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
@@ -107,16 +109,16 @@ export default function HeroSection() {
           >
             <a
               href="/setup"
-              className="group flex items-center gap-2 rounded-full bg-primary-500 px-8 py-4 text-lg font-bold text-black transition-all hover:scale-105 hover:bg-primary-400"
+              className="group flex items-center gap-2 rounded-full bg-blue-500 px-8 py-4 text-lg font-bold text-black transition-all hover:scale-105 hover:bg-primary-400"
             >
               Try For Free
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="#demo"
+              href="/our-work"
               className="group flex items-center gap-2 rounded-full border border-neutral-700 bg-neutral-800 px-8 py-4 text-lg font-medium text-white transition-all hover:bg-neutral-700"
             >
-              See Features
+              Our Work
               <Play className="h-5 w-5 transition-transform group-hover:scale-110" />
             </a>
           </motion.div>
@@ -130,7 +132,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 className="group relative rounded-xl border border-neutral-800 bg-neutral-900/50 p-6 transition-all hover:border-primary-500"
               >
-                <div className="mb-4 inline-block rounded-lg bg-primary-500/10 p-2 text-primary-500">
+                <div className="mb-4 inline-block rounded-lg bg-primary-500/10 p-2 text-blue-500">
                   {feature.icon}
                 </div>
                 <h3 className="mb-2 text-lg font-bold text-white">

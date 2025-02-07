@@ -56,8 +56,8 @@ export default function Navbar() {
               href="/"
               className="group flex items-center gap-2 text-xl font-bold text-white transition-colors"
             >
-              <span className="bg-gradient-to-r from-yellow-400 to-yellow-200 bg-clip-text text-2xl text-transparent">
-                LogoIpsum
+              <span className="bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-2xl text-transparent">
+                Techsectra
               </span>
             </Link>
 
@@ -84,7 +84,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/setup"
-                className="rounded-full bg-yellow-400 px-5 py-2 text-sm font-medium text-neutral-900 transition-all hover:bg-yellow-300"
+                className="rounded-full bg-blue-500 px-5 py-2 text-sm font-medium text-neutral-900 transition-all hover:bg-yellow-300"
               >
                 Get Your Consultancy
               </Link>
